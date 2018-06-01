@@ -10,8 +10,6 @@ $(document).ready(function(){
 
 	$(".fullscreen").css("height", window_height)
 	$(".fitscreen").css("height", fitscreen);
-
-     
     
 
     $(".menu-bar").on('click', function(e){
@@ -20,32 +18,21 @@ $(document).ready(function(){
         $("span", this).toggleClass("lnr-menu lnr-cross");
         $(".main-menu").addClass('mobile-menu');
     });
-     
-    $('select').niceSelect();
-    $('.img-pop-up').magnificPopup({
-        type: 'image',
-        gallery:{
-        enabled:true
-        }
-    });
-
-    $('.cards-slider').owlCarousel({
-        center: true,
-        items:1,
-        loop:true,
-        margin: 100,
-        dots: true
-    });
-    $('.banner-slider').owlCarousel({
-        items:1,
-        loop:true,
-        margin: 100,
-        dots: true
-    });
-    
 
     $(document).ready(function() {
         $('#mc_embed_signup').find('form').ajaxChimp();
     });      
 
+
+    $('.video').parent().click(function () {
+        if($(this).children(".video").get(0).paused){
+            $(this).children(".video").get(0).play();
+            $(this).children(".playpause").fadeOut();
+        }else{
+           $(this).children(".video").get(0).pause();
+            $(this).children(".playpause").fadeIn();
+        }
+    });
+
+    
  });
